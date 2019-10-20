@@ -9,7 +9,7 @@
 
 
 <head>
-    <title>Threadzzzzzz</title>
+    <title>Threadz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/accountinfo/accountinfo.css">
