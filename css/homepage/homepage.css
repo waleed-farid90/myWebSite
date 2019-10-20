@@ -1,0 +1,191 @@
+body {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    font-family: 'Alegreya', serif;
+    font-size: medium;
+}
+
+header {
+    text-align: center;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#logo {
+    color: white;
+    text-align: center;
+}
+
+
+#main_Content {
+    display: grid;
+    height: 70vh;
+    width: 100vw;
+    grid-template-columns: 15% auto;
+    grid-template-areas: "sidebar rightmain";
+    grid-template-rows: auto;
+}
+
+
+
+
+#main_Right {
+    grid-area: rightmain;
+}
+
+#navigation_Bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+#navigation_Bar ul {
+    margin: 0 0 0 32%;
+}
+
+#search_Bar {
+    text-align: center;
+    padding: 2% 0 2% 0;
+}
+
+
+
+#search {
+    width: 85%;
+    height: 30px;
+    border-radius: 15px;
+    outline: 0;
+}
+
+
+
+#searchButton {
+    height: 35px;
+    width: 35px;
+    outline: 0;
+    position: relative;
+    top: .8em;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+#main_Image {
+    max-height: 70%;
+    max-width: 45%;
+}
+
+
+footer {
+    display: grid;
+    height: auto;
+    width: 100vw;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-areas: "footerleft footermiddle footerright";
+    grid-template-rows: auto;
+    bottom: 0;
+    background-color: black;
+    color: white;
+}
+
+#footer_left {
+    grid-area: footerleft;
+    background-color: black;
+    padding: 0% 0 5% 0%;
+}
+
+#footer_left h4 {
+    position: relative;
+    left: 8%;
+}
+
+.socialmedia {
+    border-radius: 10%;
+    max-height: 10%;
+    max-width: 10%;
+    margin-left: 2%;
+}
+
+#footer_middle {
+    grid-area: footermiddle;
+    background-color: black;
+    padding-left: 40%;
+    font-size: larger;
+}
+
+#footer_middle ul {
+    list-style: none;
+}
+
+#footer_middle h4 {
+    padding-left: 0%;
+    color: grey;
+    text-decoration: underline;
+}
+
+#footer_right {
+    grid-area: footerright;
+    background-color: black;
+    padding-left: 40%;
+    font-size: larger;
+}
+
+#footer_right h4 {
+    padding-left: 20%;
+    color: grey;
+    text-decoration: underline;
+}
+
+
+
+.navbuttons {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1% 1.7%;
+    margin: 0 3% 0 3%;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.navbuttons:hover {
+    background-color: white;
+    color: black;
+}
+
+.sidebar {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 40px 20px 40px;
+    text-decoration: none;
+    border-radius: 15px;
+    list-style: none;
+}
+
+.sidebar:hover {
+    background-color: black;
+    color: white;
+}
+
+#side_Bar {
+    grid-area: sidebar;
+    margin-top: 30px;
+}
+
+.mySlides {
+    display: none;
+}
