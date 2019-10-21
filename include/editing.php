@@ -14,7 +14,7 @@ else if (isset($_POST['apply'])) {
     $price = mysqli_real_escape_string($db, $_POST['price']);
     $category = mysqli_real_escape_string($db, $_POST['category']);
 
-    $uploaddir = 'images/browsepage/Kids/';
+    $uploaddir = 'images/browsepage/';
     $uploadfile = basename($_FILES['change_button']['name']);
     
     // Setting values to the database.
@@ -34,7 +34,7 @@ else if (isset($_POST['apply'])) {
     mysqli_query($db, $edit_category);
     
     if (!$uploadfile == "") {
-        $uploadfile = $uploaddir . basename($_FILES['change_button']['name']);
+        $uploadfile = $uploaddir.$category.'/' . basename($_FILES['change_button']['name']);
         $edit_image = "UPDATE products SET image='$uploadfile' WHERE id='$prod_id'";
         mysqli_query($db, $edit_image);
     }

@@ -45,6 +45,7 @@ mysqli_close($db);
 
 // Creating an account details button.
 echo '<a href="accountinfopage.php?id='.$username.'"><input type="button" value="Account Details" id="account_button"></a>';
+echo '<a href="add_listing.php"><input type="button" value="Add New Listing" id="account_button"></a>';
 
 // Generating list items for all listings from user
 if ($row_count == 0) {
