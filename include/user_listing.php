@@ -72,8 +72,13 @@ if ($row_count % 10 == 0) {
     $show_rows = (floor($row_count / 10) + 1);
 }
 for ($x = 0; $x < $show_rows; $x++) {
-    echo '<button type=button; class="pageButtons"; id="' . ($limit) . '" onclick="setPage(this.id)">' . ($x + 1) . '</button>';
+    if ($_GET['page'] == $limit) {
+        echo '<button type=button; class="thispagebutton"; id="' . ($limit) . '" onclick="setPage(this.id)">' . ($x + 1) . '</button>';
+    } else {
+        echo '<button type=button; class="pageButtons"; id="' . ($limit) . '" onclick="setPage(this.id)">' . ($x + 1) . '</button>';
+    }
     $limit = $limit + 10;
 }
+
 
 ?>

@@ -6,24 +6,24 @@ include_once 'connect_database.php';
 $sql = "";
 $row_count = 0;
 $result;
-$offset = "limit 10 Offset ".$_GET['page'];
-list($id,$and,$search,$where,$category)="";
+$offset = "limit 10 Offset " . $_GET['page'];
+list($id, $and, $search, $where, $category) = "";
 
 
 //checking if id or search is passed in url
 
 if (isset($_GET['search']) && !empty($_GET['search'])) {
-    $searchParameter= $_GET['search'];
+    $searchParameter = $_GET['search'];
     $search = "title like '%$searchParameter%' ";
     $where = "where ";
 }
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {
-    if($search!=""){
+    if ($search != "") {
         $and = "and ";
     }
     $categoryParameter = $_GET['id'];
-    $category = $and."category = '$categoryParameter' ";
+    $category = $and . "category = '$categoryParameter' ";
     if (empty($where)) {
         $where = "where ";
     }
@@ -36,8 +36,8 @@ if (isset($_GET['page']) && $_GET['page'] != 0) {
 }
 
 // Building the query.
-$productQueryTen = "SELECT * from products ".$where.$search.$category.$offset;
-$totalProducts = "SELECT * from products ".$where.$search.$category;
+$productQueryTen = "SELECT * from products " . $where . $search . $category . $offset;
+$totalProducts = "SELECT * from products " . $where . $search . $category;
 $resultProductsTen = mysqli_query($db, $productQueryTen);
 $resultTotalProducts = mysqli_query($db, $totalProducts);
 $row_count = mysqli_num_rows($resultTotalProducts);
@@ -57,7 +57,7 @@ if ($row_count == 0) {
             $row['price'] . '</h2>' .
             '</li>';
     }
-// Creating the pagination, based on the number of results returned from the database.
+    // Creating the pagination, based on the number of results returned from the database.
     $limit = 0;
     $show_rows = 0;
     if ($row_count % 10 == 0) {
@@ -66,7 +66,11 @@ if ($row_count == 0) {
         $show_rows = (floor($row_count / 10) + 1);
     }
     for ($x = 0; $x < $show_rows; $x++) {
-        echo '<button type=button; class="pageButtons"; id="' . ($limit) . '" onclick="setPage(this.id)">' . ($x + 1) . '</button>';
+        if ($_GET['page'] == $limit) {
+            echo '<button type=button; class="thispagebutton"; id="' . ($limit) . '" onclick="setPage(this.id)">' . ($x + 1) . '</button>';
+        } else {
+            echo '<button type=button; class="pageButtons"; id="' . ($limit) . '" onclick="setPage(this.id)">' . ($x + 1) . '</button>';
+        }
         $limit = $limit + 10;
     }
 }
